@@ -10,8 +10,11 @@ import java.time.ZonedDateTime;
 import java.util.List;
 
 public interface MessageRepository extends JpaRepository<Message, Long> {
-        @Query("SELECT m FROM Message m WHERE (m.tag1 = :tagName OR m.tag2 = :tagName OR m.tag3 = :tagName OR m.tag4 = :tagName OR m.tag5 = :tagName) AND m.email = :email")
+        @Query("SELECT m FROM Message m WHERE (m.tag1 = :tagName) AND m.email = :email")
         List<Message> findByTagNameAndEmail(@Param("tagName") String tagName, @Param("email") String email);
+
+        @Query("SELECT m FROM Message m WHERE m.email = :email")
+        List<Message> findByEmail(@Param("email") String email);
 
         @Query("SELECT m.tag1, m.tag2, m.tag3, m.tag4, m.tag5 " +
                 "FROM Message m " +

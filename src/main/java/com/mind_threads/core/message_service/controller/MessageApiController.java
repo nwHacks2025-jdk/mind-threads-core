@@ -19,6 +19,9 @@ public class MessageApiController {
 
     @PostMapping("/tag")
     public ResponseEntity<List<Message>> registerMessage(@RequestBody GetMessageByTagNameRequest getMessageByTagNameRequest) {
+        if(getMessageByTagNameRequest.getTagName() == null) {
+            return ResponseEntity.ok(messageService.getMessageByEmail(getMessageByTagNameRequest));
+        }
         List<Message> messageList = messageService.getMessageByTagName(getMessageByTagNameRequest);
         return ResponseEntity.ok(messageList);
     }

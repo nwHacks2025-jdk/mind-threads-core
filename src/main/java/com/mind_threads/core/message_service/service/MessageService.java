@@ -23,6 +23,10 @@ public class MessageService {
         return messageRepository.findByTagNameAndEmail(getMessageByTagNameRequest.getTagName(), getMessageByTagNameRequest.getEmail());
     }
 
+    public List<Message> getMessageByEmail(GetMessageByTagNameRequest getMessageByTagNameRequest) {
+        return messageRepository.findByEmail(getMessageByTagNameRequest.getEmail());
+    }
+
     public GetMessageByTopicResponse getMessageByTopic(GetMessageByTopicRequest getMessageByTopicRequest) {
 
         List<Object[]> tagsList = messageRepository.findTagsByEmail(getMessageByTopicRequest.getEmail());
