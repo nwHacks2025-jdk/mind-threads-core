@@ -1,0 +1,7 @@
+version: '3'
+services:
+  mind-threads-core:
+    image: devjasper0906/mind-threads-core:0.0.1
+    container_name: mind-threads-core
+    ports:
+      - "8080:8080"
