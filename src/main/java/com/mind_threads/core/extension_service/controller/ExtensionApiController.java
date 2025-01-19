@@ -1,5 +1,6 @@
 package com.mind_threads.core.extension_service.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.mind_threads.core.extension_service.dto.MessageRequest;
 import com.mind_threads.core.extension_service.service.ExtensionService;
 import com.mind_threads.core.user_management_service.domain.Member;
@@ -23,7 +24,7 @@ public class ExtensionApiController {
     }
 
     @PostMapping("/thread")
-    public ResponseEntity<String> registerThread(@RequestBody MessageRequest messageRequest) {
+    public ResponseEntity<String> registerThread(@RequestBody MessageRequest messageRequest) throws Exception {
         extensionService.registerThread(messageRequest);
         return ResponseEntity.ok("Success");
     }

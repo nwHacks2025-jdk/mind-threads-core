@@ -45,19 +45,19 @@ public class MessageService {
             List<String> subcategory = new ArrayList<>();
             if (tagMap.containsKey("tag2")) {
                 String tag2 = (String) tagMap.get("tag2");
-                subcategory.addAll(Arrays.asList(tag2.split(","))); // Split comma-separated values
+                subcategory.addAll(Arrays.asList(tag2.split(",")));
             }
             if (tagMap.containsKey("tag3")) {
                 String tag3 = (String) tagMap.get("tag3");
-                subcategory.addAll(Arrays.asList(tag3.split(","))); // Split comma-separated values
+                subcategory.addAll(Arrays.asList(tag3.split(",")));
             }
             if (tagMap.containsKey("tag4")) {
                 String tag4 = (String) tagMap.get("tag4");
-                subcategory.addAll(Arrays.asList(tag4.split(","))); // Split comma-separated values
+                subcategory.addAll(Arrays.asList(tag4.split(",")));
             }
             if (tagMap.containsKey("tag5")) {
                 String tag5 = (String) tagMap.get("tag5");
-                subcategory.addAll(Arrays.asList(tag5.split(","))); // Split comma-separated values
+                subcategory.addAll(Arrays.asList(tag5.split(",")));
             }
 
             // Create and add the Node
